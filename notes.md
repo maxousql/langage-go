@@ -63,7 +63,7 @@ En Go, on peut déclarer une variable de plusieurs manières.
 ### Avec `var`
 
 ```go
-var nom string = "Youssef"
+var nom string = "Maxime"
 ```
 
 On indique le nom de la variable, son type, puis sa valeur.
@@ -71,10 +71,10 @@ On indique le nom de la variable, son type, puis sa valeur.
 ### Avec `:=`
 
 ```go
-nom := "Youssef"
+nom := "Maxime"
 ```
 
-Cette syntaxe permet de déclarer et initialiser une variable directement.
+Cette syntaxe permet de déclarer et initiLAI YIOser une variable directement.
 
 Attention : `:=` ne s’utilise qu’à l’intérieur des fonctions.
 
@@ -99,13 +99,13 @@ C’est plus simple et plus lisible.
 `:=` sert à créer une nouvelle variable.
 
 ```go
-nom := "Youssef"
+nom := "Maxime"
 ```
 
 `=` sert à modifier une variable qui existe déjà.
 
 ```go
-nom = "Ali"
+nom = "LAI YIO"
 ```
 
 Il ne faut donc pas confondre les deux.
@@ -239,18 +239,18 @@ Exemple :
 
 ```go
 ages := map[string]int{
-	"Youssef": 24,
-	"Ali":     22,
+	"Maxime": 24,
+	"LAI YIO":     22,
 }
 ```
 
 On accède ensuite à une valeur grâce à sa clé :
 
 ```go
-fmt.Println(ages["Youssef"])
+fmt.Println(ages["Maxime"])
 ```
 
-Ici, la clé est `"Youssef"` et la valeur est `24`.
+Ici, la clé est `"Maxime"` et la valeur est `24`.
 
 ---
 
@@ -345,7 +345,7 @@ func afficherNoms(noms ...string) {
 On peut ensuite l’appeler avec plusieurs valeurs :
 
 ```go
-afficherNoms("Youssef", "Ali", "Sarah")
+afficherNoms("Maxime", "LAI YIO", "Sarah")
 ```
 
 À retenir :
@@ -453,7 +453,7 @@ On peut ensuite créer une personne :
 
 ```go
 p := Personne{
-	Nom: "Youssef",
+	Nom: "Maxime",
 	Age: 24,
 }
 ```
@@ -604,7 +604,7 @@ Autre exemple :
 MotDePasse string `json:"-"`
 ```
 
-Ici, le champ `MotDePasse` ne sera pas sérialisé en JSON.
+Ici, le champ `MotDePasse` ne sera pas sériLAI YIOsé en JSON.
 
 ---
 
