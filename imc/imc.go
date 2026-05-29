@@ -2,11 +2,38 @@ package main
 
 import "fmt"
 
-func main() {
-	const IMCMaigreur = 18.5
-	const IMCNormal = 25.0
-	const IMCSurpoids = 30.0
+const (
+	IMCMaigreur  = 18.5
+	IMCNormal   = 25.0
+	IMCSurpoids = 30.0
+)
 
+func calculerIMC(poids float64, taille float64) float64 {
+	return poids / (taille * taille)
+}
+
+func determinerCategorie(imc float64) string {
+	switch {
+	case imc < IMCMaigreur:
+		return "Maigreur"
+	case imc < IMCNormal:
+		return "Normal"
+	case imc < IMCSurpoids:
+		return "Surpoids"
+	default:
+		return "Obésité"
+	}
+}
+
+func afficherResultat(nom string, poids float64, taille float64, imc float64, categorie string) {
+	fmt.Printf("\nBonjour %s !\n", nom)
+	fmt.Printf("Poids : %.2f kg\n", poids)
+	fmt.Printf("Taille : %.2f m\n", taille)
+	fmt.Printf("IMC : %.2f\n", imc)
+	fmt.Printf("Catégorie : %s\n", categorie)
+}
+
+func main() {
 	var nom string
 	var poids float64
 	var taille float64
@@ -25,20 +52,8 @@ func main() {
 		return
 	}
 
-	imc := poids / (taille * taille)
+	imc := calculerIMC(poids, taille)
+	categorie := determinerCategorie(imc)
 
-	fmt.Printf("\nBonjour %s !\n", nom)
-	fmt.Printf("Poids : %.2f kg\n", poids)
-	fmt.Printf("Taille : %.2f m\n", taille)
-	fmt.Printf("IMC : %.2f\n", imc)
-
-	if imc < IMCMaigreur {
-		fmt.Println("Catégorie : Maigreur")
-	} else if imc < IMCNormal {
-		fmt.Println("Catégorie : Normal")
-	} else if imc < IMCSurpoids {
-		fmt.Println("Catégorie : Surpoids")
-	} else {
-		fmt.Println("Catégorie : Obésité")
-	}
+	afficherResultat(nom, poids, taille, imc, categorie)
 }
